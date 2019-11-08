@@ -18,7 +18,7 @@ const SmurfList = () => {
         return smurfs.map(smurf => <Smurf key={smurf.id} data={smurf} />);
     };
 
-    return <div>{smurfs ? renderSmurfs() : 'Here come the Smurfs...'}</div>
+    return <div className="smurfs">{smurfs ? renderSmurfs() : 'Here come the Smurfs...'}</div>
 };
 
 export default SmurfList;
