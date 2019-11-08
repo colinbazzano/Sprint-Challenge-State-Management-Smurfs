@@ -2,7 +2,7 @@ import {
     FETCH_SMURFS_START,
     FETCH_SMURFS_SUCCESS,
     FETCH_SMURFS_FAILURE
-} from './actions';
+} from '../actions';
 
 const initialState = {
     smurfs: [],
