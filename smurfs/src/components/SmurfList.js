@@ -12,7 +12,7 @@ const SmurfList = () => {
 
     useEffect(() => {
         dispatch(fetchSmurfs());
-    }, []);
+    }, [smurfs]);
 
     const renderSmurfs = () => {
         return smurfs.map(smurf => <Smurf key={smurf.id} data={smurf} />);

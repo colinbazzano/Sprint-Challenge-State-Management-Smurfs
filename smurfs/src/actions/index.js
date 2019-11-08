@@ -22,5 +22,21 @@ export const fetchSmurfs = () => dispatch => {
     axios
         .get('http://localhost:3333/smurfs')
         .then(res => dispatch({ type: FETCH_SMURFS_SUCCESS, payload: res.data }))
-        .catch(err => dispatch({ type: FETCH_SMURFS_FAILURE, payload: err.response}));
+        .catch(error => dispatch({ type: FETCH_SMURFS_FAILURE, payload: error.response}));
+};
+
+
+// this is where Smurf POST begins
+
+export const POST_SMURFS_START = 'POST_SMURFS_START';
+export const POST_SMURFS_SUCCESS = 'POST_SMURFS_SUCCESS';
+export const POST_SMURFS_FAILURE = 'POST_SMURFS_FAILURE';
+
+export const postSmurfs = data => dispatch => {
+    dispatch({ type: POST_SMURFS_START });
+
+    axios
+        .post('http://localhost:3333/smurfs', data)
+        .then(res => console.log('New Smurf Posted', res))
+        .catch(error => dispatch({ type: POST_SMURFS_FAILURE, payload: error.response }));
 };
